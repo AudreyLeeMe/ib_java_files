@@ -1,5 +1,7 @@
 #!/usr/bin/env jruby
 # main.rb
+require 'rubygems' 
+require 'ruby-debug' 
 require 'java'
 
 java_import 'java.awt.Component'
@@ -9,7 +11,7 @@ java_import 'TestJavaClient.SampleFrame'
 
 class Main
   java_signature 'void main(String[])'
-  def self.main(args)
+  def self.main(args= nil)
     sample_frame = SampleFrame.new
     sample_frame.set_visible(true)
   end
@@ -27,3 +29,4 @@ class Main
 
 end
 
+Main.main
